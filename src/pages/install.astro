@@ -1,0 +1,103 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Uspsection from "../components/Uspsection.astro";
+import Infografik from "../components/Infografiksektion.astro";
+import Link from "../components/Link.astro";
+import Textlink from "../components/Textlink.astro";
+import SplitcontentHero from "../components/SplitcontentHero.astro";
+---
+
+<MainLayout title="Elby App" description="Elby App gør elbilopladning nemt og tilgængeligt i byen. Find nærmeste lader, tilslut dit kabel og start opladningen direkte fra mobilen." ogtitle="Oplad elbilen nemt med Elby App" ogdescription="Se hvordan du bruger Elby App til at finde, tilslutte og starte opladning – med få klik. Download appen og kom i gang i dag.">
+  <div id="1_inwallhero" class="bg-sec_be-500 px-4 mt-l md:mt-0">
+    <SplitcontentHero title="Sådan virker elby" text="Elbys unikke design gør det muligt at installere, hvor traditionelle ladebokse og -standere ikke kan være. Se videoen for at se hvor let det er at lade med Elby." rightMediaType="youtube" rightMediaSrc="https://www.youtube.com/embed/1Ta-qd4lxZA" />
+  </div>
+
+  <div class="fade-in-up">
+    <Uspsection header="Fordele ved at vælge Elby til din boligforening" text1="1. Gratis lader og fri installation" text2="2. Nemt at komme i gang – vi klarer det hele" text3="3. Overskudsdeling op til 50%" img1="/svg/gratis_lader.svg" img2="/svg/installation.svg" img3="/svg/overskudsdeling.svg" alt1="Ikon der viser gratis installation af Elby væglader" alt2="Ikon for 0 kr. abonnement på Elby ladeløsning" alt3="Ikon der illustrerer op til 50 % overskudsdeling for boligforeninger" showButton="false" />
+  </div>
+
+  <div class="fade-in-up">
+    <Infografik
+      img="/svg/infografikBolig.svg"
+      header="Jo mere du lader, jo mere får du tilbage."
+      text1="Elby Partner tilbydes til ejer-, andels- og almene boliger ud fra et andelsprincip. Vi sørger for alt det praktiske, samt udlægget for den fulde installation. Når omkostningen er tjent hjem, deler vi op til halvdelen af overskuddet med jer. Uanset hvor meget – eller lidt – der lades i din bygning, skal foreningen aldrig have penge op af lommen.  "
+      text2="Vi tager os desuden af alt det administrative med afregning med elselskabet. Og fordi vi også leverer strømmen, skal du ikke heller ikke bøvle med afgiftsrefusion. "
+      alt="Infografik der viser stigende overskudsdeling fra 20 % til 50 %, baseret på antal opladninger og ugentligt forbrug med Elby Partner"
+      buttonText="Få Elby på generalforsamlingen"
+      buttonlink="https://www.elby.dk/guides-artikler/generalforsamling-med-elby"
+      linkVariant="secondary"
+    />
+  </div>
+
+  <section class="flex fade-in-up flex-col-reverse md:flex-row w-full bg-sec_be-500">
+    <div class="basis-full md:basis-[50%]">
+      <img src="../index/index_opladning.webp" class="w-full h-full object-cover" />
+    </div>
+
+    <div class="basis-full md:basis-[50%] flex items-center justify-center p-sm md:my-md">
+      <div class="max-w-md mx-auto">
+        <h3 class="mb-sm">Hvorfor vælge Elby?</h3>
+        <div class="flex flex-col gap-sm mb-xxxs -ml-4">
+          <div class="flex items-center gap-2">
+            <img src="../svg/install.svg" alt=" Installationsikon" class="w-16 h-16 mt-1" />
+            <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Gratis ladeløsning til din bygning, fri installation og intet abonnement</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <img src="../svg/overskudsdeling.svg" alt="Penge ikon" class="w-16 h-16 mt-1" />
+            <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Få op til 50% af overskuddet til dit ejendomsselskab eller din boligforening</p>
+          </div>
+          <div class="flex items-center gap-2 mb-xs">
+            <img src="../svg/groenomstilling.svg" alt="Blad ikon" class="w-16 h-16 mt-1" />
+            <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Med Elby's lader deltager du aktivt i den grønne omstilling</p>
+          </div>
+        </div>
+        <!--<Link href="../omelby" variant="secondary" size="full"> Bliv klogere på fordelene ved Elby </Link>-->
+        <Textlink href="../omelby" linkText="Bliv klogere på fordelene ved Elby " />
+      </div>
+    </div>
+
+  </section>
+
+  <section id="5_support" class="bg-sec_be-500 pt-lg pb-2xl fade-in-up">
+    <div class="max-w-6xl mx-auto text-center mb-md">
+      <h3>Brug for hjælp? Kontakt os her!</h3>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+      <!-- Mail -->
+      <div class="flex flex-col items-center gap-5">
+        <Link href="mailto:hej@elby.com" variant="secondary" size="standard" class="group flex flex-col items-center gap-2">
+          hej@elby.com
+          <span class="relative w-6 h-6">
+            <img src="../svg/mail.svg" alt="Mail ikon" class="block group-hover:hidden absolute inset-0" />
+            <img src="../svg/mail_hover.svg" alt="Mail ikon hover" class="hidden group-hover:block absolute inset-0" />
+          </span>
+        </Link>
+      </div>
+      <!-- Telefon -->
+      <div class="flex flex-col items-center gap-5">
+        <Link href="tel:+4560552024" variant="secondary" size="standard" class="group flex flex-col items-center gap-2">
+          +45 60 55 20 24
+          <span class="relative w-6 h-6">
+            <img src="../svg/phone.svg" alt="Telefon ikon" class="block group-hover:hidden absolute inset-0" />
+            <img src="../svg/phone_hover.svg" alt="Telefon ikon hover" class="hidden group-hover:block absolute inset-0" />
+          </span>
+        </Link>
+      </div>
+      <!-- Chat -->
+      <div class="flex flex-col items-center gap-5">
+        <Link variant="secondary" size="standard" type="button" class="group flex flex-col items-center gap-2">
+          Chat med os
+          <span class="relative w-6 h-6">
+            <img src="../svg/chat.svg" alt="Chat ikon" class="block group-hover:hidden absolute inset-0" />
+            <img src="../svg/chat_hover.svg" alt="Chat ikon hover" class="hidden group-hover:block absolute inset-0" />
+          </span>
+        </Link>
+      </div>
+    </div>
+  </section>
+
+  <section id="6_bygrafik" class="bg-sec_be-500">
+    <img src="../svg/bygrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+  </section>
+</MainLayout>
