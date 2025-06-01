@@ -4,35 +4,72 @@ import Uspsection from "../components/Uspsection.astro";
 import Infografik from "../components/Infografiksektion.astro";
 import Link from "../components/Link.astro";
 import Textlink from "../components/Textlink.astro";
-import SplitcontentHero from "../components/SplitcontentHero.astro";
+import Splitcontent from "../components/Splitcontent.astro";
+const vægladerSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Elby Væglader",
+  image: ["https://elbyprojekt4.netlify.app/inwall_install_2.webp"],
+  description: "Elby væglader er en intelligent og pladsbesparende ladeløsning til etageejendomme. Den installeres direkte i bygningens facade, kræver ingen plads på fortov eller vej og gør elbilopladning muligt for både beboere og besøgende. Gratis for boligforeninger og med mulighed for overskudsdeling.",
+  brand: {
+    "@type": "Brand",
+    name: "Elby",
+  },
+  sku: "elby-væglader",
+  offers: {
+    "@type": "Offer",
+    url: "https://elbyprojekt4.netlify.app/bestil/",
+    priceCurrency: "DKK",
+    price: "kontakt for pris",
+    itemCondition: "https://schema.org/NewCondition",
+    availability: "https://schema.org/InStock",
+  },
+};
 ---
 
 <MainLayout title="Elby App" description="Elby App gør elbilopladning nemt og tilgængeligt i byen. Find nærmeste lader, tilslut dit kabel og start opladningen direkte fra mobilen." ogtitle="Oplad elbilen nemt med Elby App" ogdescription="Se hvordan du bruger Elby App til at finde, tilslutte og starte opladning – med få klik. Download appen og kom i gang i dag.">
-  <div id="1_inwallhero" class="bg-sec_be-500 px-4 mt-l md:mt-0">
-    <SplitcontentHero title="Sådan virker elby" text="Elbys unikke design gør det muligt at installere, hvor traditionelle ladebokse og -standere ikke kan være. Se videoen for at se hvor let det er at lade med Elby." rightMediaType="youtube" rightMediaSrc="https://www.youtube.com/embed/1Ta-qd4lxZA" />
+
+  <section id="1_installhero" class="flex flex-col lg:flex-row bg-sec_be-500">
+    <div class="flex flex-col justify-center mx-auto order-2 lg:order-1 sm:max-w-md pb-sm">
+     <div class="px-sm">
+      <div class="mb-4 pt-md">
+        <h1>ELBY Installation</h1>
+      </div>
+      <p class="mb-sm">Elby tilbyder en komplet ladeløsning til jeres ejendom uden omkostninger. Vores teknikere står for alt fra planlægning og boring til montering og tilslutning – inklusiv de nødvendige tilladelser. I slipper for bøvl og udgifter.</p>
+
+      <div class="mb-xs">
+        <ul>
+          <li class="flex items-center gap-xs border-b-[1px] border-t-[1px] border-neu_db-400 py-xxs">
+            <img src="/svg/installation.svg" width="48" height="40" class="w-12 h-10" alt="Gratis professionel installation" />
+            <p>Installation <span class="font-semibold">0 kr.</span></p>
+          </li>
+          <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxs">
+            <img src="/svg/install.svg" width="48" height="40" class="w-12 h-10" alt="0 kroner i abonnement" />
+            <p>Service og drift <span class="font-semibold">0 kr.</span></p>
+          </li>
+          <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxs mb-sm">
+            <img src="/svg/overskudsdeling.svg" width="48" height="40" class="w-12 h-10" alt="Op til 50 % overskudsdeling" />
+            <p>Overskudsdeling <span class="font-semibold">op til 50%</span></p>
+          </li>
+        </ul>
+
+        <Link href="../bestil" variant="primary" size="full">Få Elby til jeres ejendom</Link>
+      </div>
+    </div>
   </div>
 
-  <div class="fade-in-up">
-    <Uspsection header="Fordele ved at vælge Elby til din boligforening" 
-      text1="1. Gratis lader og fri installation" 
-      text2="2. Nemt at komme i gang – vi klarer det hele" 
-      text3="3. Overskudsdeling op til 50%" 
-      img1="/svg/gratis_lader.svg" 
-      img2="/svg/installation.svg" 
-      img3="/svg/overskudsdeling.svg" 
-      alt1="Ikon der viser gratis installation af Elby væglader" 
-      alt2="Ikon for 0 kr. abonnement på Elby ladeløsning" 
-      alt3="Ikon der illustrerer op til 50 % overskudsdeling for boligforeninger" 
-      showButton="false" />
-  </div>
+    <div class="order-1 lg:order-2 lg:w-1/2 mt-l md:mt-0">
+      <img src="inwall_install_2.webp" alt="Elby væglader installeret på bygning – opladning til boligforeningens beboere" width="600" height="900" class="w-full h-full object-cover" fetchpriority="high" loading="eager" />
+    </div>
+  </section>
 
   <div class="fade-in-up">
     <Uspsection
       header="Fordele ved Elbys installation"
-      text1="1. Vi installerer – helt gratis og uden bøvl"
+      text1="1. Vi klarer tilladelser og installation – helt gratis og intet abonnement"
       text2="2. Alt er skræddersyet til jeres bygning og behov"
-      text3="3. Pænt og praktisk: Kablerne føres sikkert under fortovet"
-      img1="/svg/installation.svg"
+      text3="3. Skinnen monteres nemt i fortovet og holder sikkert ladekablet på plads"
+      img1="/svg/montagevejledning.svg"
       img2="/svg/inwall_install.svg"
       img3="/svg/sleeve.svg"
       alt1="Ikon for gratis og komplet installation med Elby"
@@ -42,12 +79,57 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
     />
   </div>
 
+  <section class="flex fade-in-up flex-col-reverse md:flex-row w-full bg-sec_be-500">
+    <div class="basis-full md:basis-[50%]">
+      <img src="../index/index_opladning.webp" class="w-full h-full object-cover" />
+    </div>
+  
+    <div class="basis-full md:basis-[50%] flex items-center justify-center p-sm py-md">
+      <div class="max-w-md mx-auto">
+        <h3 class="mb-xs">Vi står for drift, service og support</h3>
+        <div class="flex flex-col gap-sm mb-xxxs">
+          <div class="flex items-center gap-2">
+            <!-- <img src="../svg/install.svg" alt="Installationsikon" class="w-16 h-16 mt-1" /> -->
+            <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">
+              Med Elby slipper I for alt det praktiske. Vi overvåger, vedligeholder og servicerer jeres ladeløsning, så den altid fungerer – uden at I skal gøre en finger.
+            </p>
+          </div>
+  
+          <ul class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop list-disc ml-5 font-light pb-6">
+            <li>Drift og overvågning af anlægget</li>
+            <li>Løbende vedligeholdelse og service</li>
+            <li>Afregning og alt det administrative</li>
+            <li>Support til beboerne – også hvis noget driller</li>
+          </ul>
+<!--           <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">
+            Vi sørger for, at det hele bare virker – så I kan bruge tiden på noget andet.
+          </p> -->
+        </div>
+        <Link href="../omelby" variant="primary" size="full"> Kontakt os og bliv klogere på Elby </Link>
+<!--    <Textlink href="../omelby" linkText="Bliv klogere på fordelene ved Elby " /> -->
+      </div>
+    </div>
+  </section>
+
+
+<!--   <div class="bg-sec_be-500 fade-in-up">
+    <Splitcontent img="../index/index_opladning.webp" 
+    header="En skræddersyet ladeløsning til din bygning" 
+    text1="Elbys ladeløsning er et aktiv, der kan øge forrentningen på din bygning og samtidig gøre, at du bidrager til den grønne omstilling - og så tager den kun et par timer at installere." 
+    text2="Elbys ladeløsning integreres let ind i din eksisterende bygning, og optager ingen plads. På den måde kan du tilbyde dine brugere af parkeringsområdet at lade, hvor det tidligerer ikke har været muligt" 
+    alt="Elby væglader integreret i ejendomsbygning – gør det muligt at tilbyde opladning uden at optage plads" 
+    buttonText="Få Elby til ejendomsselskaber" 
+    buttonlink="../bestil" 
+    linkVariant="tertiary" />
+  </div> -->
+
   <div class="fade-in-up">
     <Infografik
       img="/svg/infografikBolig.svg"
       header="Jo mere du lader, jo mere får du tilbage."
-      text1="Elby Partner tilbydes til ejer-, andels- og almene boliger ud fra et andelsprincip. Vi sørger for alt det praktiske, samt udlægget for den fulde installation. Når omkostningen er tjent hjem, deler vi op til halvdelen af overskuddet med jer. Uanset hvor meget – eller lidt – der lades i din bygning, skal foreningen aldrig have penge op af lommen.  "
-      text2="Vi tager os desuden af alt det administrative med afregning med elselskabet. Og fordi vi også leverer strømmen, skal du ikke heller ikke bøvle med afgiftsrefusion. "
+      text1="Elby Partner tilbydes til ejer-, andels- og almene boliger – og bygger på et andelsprincip. Vi står for hele installationen, uden at det koster jer noget. Når den er tjent hjem, deler vi op til 50 % af overskuddet med jer."
+      text2="Foreningen slipper for både investering og risiko – uanset hvor meget der lades."
+      text3="Vi håndterer hele den administrative del, inkl. afregning med elselskabet. Og fordi Elby også leverer strømmen, slipper I helt for bøvl med afgiftsrefusion."
       alt="Infografik der viser stigende overskudsdeling fra 20 % til 50 %, baseret på antal opladninger og ugentligt forbrug med Elby Partner"
       buttonText="Få Elby på generalforsamlingen"
       buttonlink="https://www.elby.dk/guides-artikler/generalforsamling-med-elby"
@@ -55,37 +137,69 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
     />
   </div>
 
-  <section class="flex fade-in-up flex-col-reverse md:flex-row w-full bg-sec_be-500">
-    <div class="basis-full md:basis-[50%]">
-      <img src="../index/index_opladning.webp" class="w-full h-full object-cover" />
-    </div>
-
-    <div class="basis-full md:basis-[50%] flex items-center justify-center p-sm md:my-md">
-      <div class="max-w-md mx-auto">
-        <h3 class="mb-sm">Hvorfor vælge Elby?</h3>
-        <div class="flex flex-col gap-sm mb-xxxs -ml-4">
-          <div class="flex items-center gap-2">
-            <img src="../svg/install.svg" alt=" Installationsikon" class="w-16 h-16 mt-1" />
-            <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Gratis ladeløsning til din bygning, fri installation og intet abonnement</p>
-          </div>
-          <div class="flex items-center gap-2">
-            <img src="../svg/overskudsdeling.svg" alt="Penge ikon" class="w-16 h-16 mt-1" />
-            <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Få op til 50% af overskuddet til dit ejendomsselskab eller din boligforening</p>
-          </div>
-          <div class="flex items-center gap-2 mb-xs">
-            <img src="../svg/groenomstilling.svg" alt="Blad ikon" class="w-16 h-16 mt-1" />
-            <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Med Elby's lader deltager du aktivt i den grønne omstilling</p>
-          </div>
-        </div>
-        <!--<Link href="../omelby" variant="secondary" size="full"> Bliv klogere på fordelene ved Elby </Link>-->
-        <Textlink href="../omelby" linkText="Bliv klogere på fordelene ved Elby " />
+  <div class="bg-sec_be-500 py-12 fade-in-up">
+    <section class="mx-auto px-6 sm:px-8 lg:p-12">
+      <h2 class="mb-sm pl-xxs text-center">Sådan er processen med Elby</h2>
+      <div class="overflow-x-auto flex space-x-6 hide-scrollbar">
+        <!-- Card 01 -->
+        <article class="flex-shrink-0 bg-primary-50 shadow-md w-80 p-6 m-2">
+            <p class="text-body-sm md:text-body-sm lg:text-body-sm-tablet mb-2 font-bold">01</p>
+            <p class="text-body-lg md:text-body-lg-tablet lg:text-body-lg-desktop mb-4 font-bold">Kontakt</p>
+            <p class="text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">
+            Vi starter med en snak for at afklare jeres behov og muligheder for en ladeløsning.
+          </p>
+        </article>
+  
+        <!-- Card 02 -->
+        <article class="flex-shrink-0 bg-primary-50 shadow-md w-80 p-6 m-2">
+            <p class="text-body-sm md:text-body-sm lg:text-body-sm-tablet mb-2 font-bold">02</p>
+            <p class="text-body-lg md:text-body-lg-tablet lg:text-body-lg-desktop mb-4 font-bold">Ejendomsvurdering</p>
+            <p class="text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">
+            Vi vurderer bygning og el-infrastruktur og planlægger en smart, effektiv installation sammen med jer.
+          </p>
+        </article>
+  
+        <!-- Card 03 -->
+        <article class="flex-shrink-0 bg-primary-50 shadow-md w-72 p-6 m-2">
+          <p class="text-body-sm md:text-body-sm lg:text-body-sm-tablet mb-2 font-bold">03</p>
+          <p class="text-body-lg md:text-body-lg-tablet lg:text-body-lg-desktop mb-4 font-bold">Installation</p>
+          <p class="text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">
+            Vi monterer ladestik i facaden og skjuler kablerne i vores unikke fortovsskinne – uden omkostninger for jer.
+          </p>
+        </article>
+  
+        <!-- Card 04 -->
+        <article class="flex-shrink-0 bg-primary-50 shadow-md w-72 p-6 m-2">
+            <p class="text-body-sm md:text-body-sm lg:text-body-sm-tablet mb-2 font-bold">04</p>
+            <p class="text-body-lg md:text-body-lg-tablet lg:text-body-lg-desktop mb-4 font-bold">Vedligeholdelse</p>
+            <p class="text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">
+            Vi sørger for drift, service og vedligeholdelse, så I altid har en løsning, der virker – uden besvær.
+          </p>
+        </article>
+  
+        <!-- Card 05 -->
+        <article class="flex-shrink-0 bg-primary-50 shadow-md w-72 p-6 m-2">
+            <p class="text-body-sm md:text-body-sm lg:text-body-sm-tablet mb-2 font-bold">05</p>
+            <p class="text-body-lg md:text-body-lg-tablet lg:text-body-lg-desktop mb-4 font-bold">Brugeradgang</p>
+            <p class="text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">
+            Beboere bruger vores app til opladning, forbrugsaflæsning og betaling – nemt og overskueligt.
+          </p>
+        </article>
+  
+        <!-- Card 06 -->
+        <article class="flex-shrink-0 bg-primary-50 shadow-md w-72 p-6 m-2">
+            <p class="text-body-sm md:text-body-sm lg:text-body-sm-tablet mb-2 font-bold">06</p>
+            <p class="text-body-lg md:text-body-lg-tablet lg:text-body-lg-desktop mb-4 font-bold">Indtægtsdeling</p>
+            <p class="text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">
+            Ejendommen får del i opladningsindtægterne – en grøn løsning med økonomisk gevinst.
+          </p>
+        </article>
       </div>
-    </div>
-
-  </section>
-
-  <section id="5_support" class="bg-sec_be-500 pt-lg pb-2xl fade-in-up">
-    <div class="max-w-6xl mx-auto text-center mb-md">
+    </section>
+  </div>
+  
+  <section id="5_support" class="pt-lg pb-2xl fade-in-up">
+    <div class="max-w-6xl mx-auto text-center mb-md p-8">
       <h3>Brug for hjælp? Kontakt os her!</h3>
     </div>
 
@@ -123,7 +237,16 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
     </div>
   </section>
 
-  <section id="6_bygrafik" class="bg-sec_be-500">
+  <section id="6_bygrafik" class="">
     <img src="../svg/bygrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
   </section>
 </MainLayout>
+<style>.hide-scrollbar {
+    overflow-x: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+  </style>
