@@ -3,8 +3,6 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Uspsection from "../components/Uspsection.astro";
 import Infografik from "../components/Infografiksektion.astro";
 import Link from "../components/Link.astro";
-import Textlink from "../components/Textlink.astro";
-import Splitcontent from "../components/Splitcontent.astro";
 const vægladerSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
@@ -89,47 +87,28 @@ const vægladerSchema = {
         <h3 class="mb-xs">Vi står for drift, service og support</h3>
         <div class="flex flex-col gap-sm mb-xxxs">
           <div class="flex items-center gap-2">
-            <!-- <img src="../svg/install.svg" alt="Installationsikon" class="w-16 h-16 mt-1" /> -->
             <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">
               Med Elby slipper I for alt det praktiske. Vi overvåger, vedligeholder og servicerer jeres ladeløsning, så den altid fungerer – uden at I skal gøre en finger.
             </p>
           </div>
-  
           <ul class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop list-disc ml-5 font-light pb-8">
             <li>Drift og overvågning af anlægget</li>
             <li>Løbende vedligeholdelse og service</li>
             <li>Afregning og alt det administrative</li>
             <li>Support til beboerne – også hvis noget driller</li>
           </ul>
-<!--           <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">
-            Vi sørger for, at det hele bare virker – så I kan bruge tiden på noget andet.
-          </p> -->
         </div>
-        <Link href="../omelby" variant="primary" size="full"> Kontakt os og bliv klogere på Elby </Link>
-<!--    <Textlink href="../omelby" linkText="Bliv klogere på fordelene ved Elby " /> -->
+        <Link href="../kontakt" variant="primary" size="full"> Kontakt os og bliv klogere på Elby </Link>
       </div>
     </div>
   </section>
 
-
-<!--   <div class="bg-sec_be-500 fade-in-up">
-    <Splitcontent img="../index/index_opladning.webp" 
-    header="En skræddersyet ladeløsning til din bygning" 
-    text1="Elbys ladeløsning er et aktiv, der kan øge forrentningen på din bygning og samtidig gøre, at du bidrager til den grønne omstilling - og så tager den kun et par timer at installere." 
-    text2="Elbys ladeløsning integreres let ind i din eksisterende bygning, og optager ingen plads. På den måde kan du tilbyde dine brugere af parkeringsområdet at lade, hvor det tidligerer ikke har været muligt" 
-    alt="Elby væglader integreret i ejendomsbygning – gør det muligt at tilbyde opladning uden at optage plads" 
-    buttonText="Få Elby til ejendomsselskaber" 
-    buttonlink="../bestil" 
-    linkVariant="tertiary" />
-  </div> -->
-
   <div class="fade-in-up">
     <Infografik
       img="/svg/infografikBolig.svg"
-      header="Jo mere du lader, jo mere får du tilbage."
-      text1="Elby Partner tilbydes til ejer-, andels- og almene boliger – og bygger på et andelsprincip. Vi står for hele installationen, uden at det koster jer noget. Når den er tjent hjem, deler vi op til 50 % af overskuddet med jer."
-      text2="Foreningen slipper for både investering og risiko – uanset hvor meget der lades."
-      text3="Vi håndterer hele den administrative del, inkl. afregning med elselskabet. Og fordi Elby også leverer strømmen, slipper I helt for bøvl med afgiftsrefusion."
+      header="Et partnerskab med grønne fordele."
+      text1="Med Elby som partner indgår I i en andelsbaseret model, hvor Elby står for hele investeringen og driften. I skal ikke lægge én krone ud – men når anlægget er betalt hjem gennem opladning, deler vi op til 50 % af overskuddet med jer."
+      text2="Det betyder, at uanset hvor meget – eller lidt – der lades, er der ingen økonomisk risiko for foreningen. Alt er gennemsigtigt, fair og til gavn for fællesskabet."
       alt="Infografik der viser stigende overskudsdeling fra 20 % til 50 %, baseret på antal opladninger og ugentligt forbrug med Elby Partner"
       buttonText="Få Elby på generalforsamlingen"
       buttonlink="https://www.elby.dk/guides-artikler/generalforsamling-med-elby"
